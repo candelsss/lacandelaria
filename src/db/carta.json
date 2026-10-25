@@ -1,0 +1,57 @@
+{
+	"categorias": [
+		{
+			"nombre": "Tortillas",
+			"items": [
+				{ "nombre": "Patata", "etiqueta": "VEGETARIANO" },
+				{ "nombre": "Patata y cebolla", "etiqueta": "VEGETARIANO" },
+				{ "nombre": "Patata y berenjena", "etiqueta": "VEGETARIANO" },
+				{ "nombre": "Patata y ajos tiernos", "etiqueta": "VEGETARIANO" },
+				{ "nombre": "Patata, cebolla y jamón", "etiqueta": null },
+				{ "nombre": "Patata y chistorra", "etiqueta": null }
+			]
+		},
+		{
+			"nombre": "Montaditos",
+			"items": [
+				{ "nombre": "Bikini - York y queso", "etiqueta": null },
+				{ "nombre": "Jamón serrano con tomate", "etiqueta": null },
+				{ "nombre": "Anchoa y tomate", "etiqueta": null },
+				{ "nombre": "Sardina con encurtidos y tomate", "etiqueta": null },
+				{ "nombre": "Salmón, aguacate y philadelphia", "etiqueta": null },
+				{ "nombre": "Salmón, aguacate y tomate", "etiqueta": null },
+				{ "nombre": "Sobrasada y queso brie", "etiqueta": null },
+				{ "nombre": "Humus, berenjena y pavo", "etiqueta": "OPCIÓN VEGANA" },
+				{ "nombre": "Rúcula, aguacate y tomate", "etiqueta": "VEGANO" }
+			]
+		},
+		{
+			"nombre": "Tablas",
+			"items": [
+				{ "nombre": "Quesos", "etiqueta": null },
+				{ "nombre": "Jamón", "etiqueta": null },
+				{ "nombre": "Embutidos", "etiqueta": null },
+				{ "nombre": "Mix de humus", "etiqueta": "VEGANO" }
+			]
+		},
+		{
+			"nombre": "Bocados",
+			"items": [
+				{ "nombre": "Rosqui de ensaladilla", "etiqueta": "VEGETARIANO" },
+				{ "nombre": "Rosqui de humus clásico", "etiqueta": "VEGANO" },
+				{ "nombre": "La croquetilla - zanahoria y cebolla", "etiqueta": "VEGANO" },
+				{ "nombre": "Brocheta cherry, queso y pesto", "etiqueta": "VEGETARIANO" }
+			]
+		},
+		{
+			"nombre": "Gildas",
+			"items": [
+				{ "nombre": "Clásica", "etiqueta": null },
+				{ "nombre": "Boquerón", "etiqueta": null },
+				{ "nombre": "Matrimonio - boquerón, anchoa", "etiqueta": null },
+				{ "nombre": "Cecina - oliva negra, cecina y queso", "etiqueta": null },
+				{ "nombre": "Oliva negra, tomate seco, cebollita, piparra", "etiqueta": "VEGANO" }
+			]
+		}
+	]
+}

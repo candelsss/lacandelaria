@@ -1,0 +1,53 @@
+@font-face {
+	font-family: "IBM Plex Mono";
+	src: url("/fonts/IBMPlexMono-Regular.ttf") format("truetype");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Instrument Serif";
+	src: url("/fonts/InstrumentSerif-Regular.ttf") format("truetype");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+:root,
+[data-theme="yellow"] {
+	--bg: #f6be00;
+	--txt: #cd001a;
+	--font-body: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+	--font-heading: "Instrument Serif", Georgia, serif;
+}
+
+[data-theme="blue"] {
+	--bg: #213b8b;
+	--txt: #f6be00;
+}
+
+[data-theme="red"] {
+	--bg: #cd001a;
+	--txt: #f2acb9;
+}
+
+[data-theme="pink"] {
+	--bg: #f2acb9;
+	--txt: #cd001a;
+}
+
+body {
+	background: var(--bg);
+	color: var(--txt);
+	font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--font-heading);
+}

@@ -1,0 +1,96 @@
+---
+import Layout from "../layouts/Layout.astro";
+import carta from "../db/carta.json";
+---
+
+<Layout title="Carta — La Candelaria" theme="yellow">
+	<main class="carta-page">
+		<h1>CARTA</h1>
+
+		<div class="carta-grid">
+			{
+				carta.categorias.map((categoria) => (
+					<section class="categoria">
+						<h2>{categoria.nombre}</h2>
+						<ul>
+							{categoria.items.map((item) => (
+								<li>
+									<span class="item-nombre">{item.nombre}</span>
+									{item.etiqueta && <span class="item-etiqueta">{item.etiqueta}</span>}
+								</li>
+							))}
+						</ul>
+					</section>
+				))
+			}
+		</div>
+	</main>
+</Layout>
+
+<style>
+	.carta-page {
+		padding: 0 1rem 2rem;
+	}
+
+	.carta-page h1 {
+		margin: 0.5rem 0 2rem;
+	}
+
+	.carta-grid {
+		display: flex;
+		flex-direction: column;
+		gap: 2.5rem;
+	}
+
+	.categoria h2 {
+		font-family: var(--font-body);
+		font-size: 1rem;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		border-bottom: 1px solid var(--txt);
+		padding-bottom: 0.4rem;
+		margin: 0 0 0.75rem;
+	}
+
+	.categoria ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	.categoria li {
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
+		gap: 1rem;
+		font-family: var(--font-body);
+		text-transform: uppercase;
+		font-size: 1rem;
+	}
+
+	.item-etiqueta {
+		font-size: 0.7rem;
+		white-space: nowrap;
+		flex-shrink: 0;
+	}
+
+	@media (min-width: 768px) {
+		.carta-page {
+			padding: 0 2rem 3rem;
+		}
+
+		.carta-grid {
+			display: block;
+			columns: 2;
+			column-gap: 4rem;
+		}
+
+		.categoria {
+			break-inside: avoid;
+			margin-bottom: 2.5rem;
+		}
+	}
+</style>

@@ -1,0 +1,25 @@
+---
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+
+interface Props {
+	title: string;
+	theme?: "yellow" | "blue" | "red" | "pink";
+}
+
+const { title, theme = "yellow" } = Astro.props;
+---
+
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body data-theme={theme}>
+		<Header />
+		<slot />
+	</body>
+</html>
