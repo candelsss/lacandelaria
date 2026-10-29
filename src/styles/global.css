@@ -38,9 +38,11 @@
 }
 
 body {
+	margin: 0;
 	background: var(--bg);
 	color: var(--txt);
 	font-family: var(--font-body);
+	overflow-x: hidden;
 }
 
 h1,

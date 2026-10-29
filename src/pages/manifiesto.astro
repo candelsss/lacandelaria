@@ -3,5 +3,189 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Manifiesto — La Candelaria" theme="blue">
-	<h1>MANIFIESTO</h1>
+	<main class="manifiesto">
+		<div class="manifiesto-grid">
+			<h1>MANIFIESTO</h1>
+
+			<div class="manifiesto-text">
+				<p>
+					El ser humano es la especie que más se come la cabeza. Y es que hay
+					quien vive con un hambre voraz de cocinar proyectos, compartir la
+					vida con los suyos y llenar momentos de sabor. Pero a veces encontrar
+					los ingredientes para hacerlo no es fácil.
+				</p>
+
+				<p>
+					Necesitas a alguien que alimente bien esas ideas. Alguien que sepa
+					verlas y que se atreva a ponerles el punto justo de sal que
+					buscabas. Y, si la cosa se pone seria, también de picante.
+				</p>
+
+				<p>
+					Y es que las decisiones importantes se toman a sangre fría, pero
+					siempre con comida caliente de por medio. Y sin protocolos. Por eso,
+					aquí no creemos en eso de que del dicho al hecho hay un trecho. Para
+					hacer tu movida realidad, en La Candelaria solo necesitamos una mesa
+					bien puesta.
+				</p>
+
+				<p>
+					Tú nos cuentas tu evento, nosotrxs cocinamos tus ideas y el éxito
+					está servido.
+				</p>
+
+				<p>La Candelaria<br />Alimentamos tu movida</p>
+			</div>
+
+			<div class="manifiesto-photo">
+				<span>Foto pendiente: añade el archivo en public/img y la conecto aquí</span>
+			</div>
+		</div>
+
+		<img
+			class="manifiesto-logo"
+			src="/img/la-candelaria-logo.webp"
+			alt="La Candelaria"
+		/>
+	</main>
 </Layout>
+
+<style>
+	/* Solo aplica a esta ruta: el bundle de estilos de Astro es por página */
+	:global(body) {
+		margin: 0;
+		height: 100vh;
+		height: 100dvh;
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+	}
+
+	:global(body .site-header) {
+		flex-shrink: 0;
+	}
+
+	.manifiesto {
+		position: relative;
+		flex: 1;
+		min-height: 0;
+		display: flex;
+		flex-direction: column;
+		padding: 0 1rem 1rem;
+	}
+
+	.manifiesto-grid {
+		flex: 1;
+		min-height: 0;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.manifiesto-grid h1 {
+		flex-shrink: 0;
+		margin: 0;
+	}
+
+	.manifiesto-text {
+		flex: 1;
+		min-height: 0;
+		overflow-y: auto;
+		display: flex;
+		flex-direction: column;
+		gap: 1.25rem;
+		padding-bottom: 17vw;
+		scrollbar-width: none; /* Firefox */
+		-ms-overflow-style: none; /* Edge/IE legacy */
+	}
+
+	.manifiesto-text::-webkit-scrollbar {
+		display: none; /* Chrome, Safari */
+	}
+
+	.manifiesto-text p {
+		margin: 0;
+		font-family: var(--font-body);
+		text-transform: uppercase;
+		line-height: 1.4;
+	}
+
+	.manifiesto-photo {
+		display: none;
+	}
+
+	.manifiesto-logo {
+		position: absolute;
+		left: 1rem;
+		right: 1rem;
+		bottom: 1rem;
+		z-index: 1;
+		display: block;
+		width: calc(100% - 2rem);
+		height: auto;
+		pointer-events: none;
+	}
+
+	@media (min-width: 900px) {
+		.manifiesto {
+			padding: 0 40px 40px;
+		}
+
+		.manifiesto-grid {
+			margin-top:3rem;
+			display: grid;
+			grid-template-columns: repeat(12, 1fr);
+			grid-template-rows: auto 1fr;
+			grid-template-areas:
+				"title title title title title title photo photo photo photo photo photo"
+				"text text text text text text photo photo photo photo photo photo";
+			column-gap: 20px;
+			row-gap: 1.5rem;
+		}
+
+		.manifiesto-grid h1 {
+			grid-area: title;
+			margin: 0;
+			/* escala con el ancho de pantalla entre un mínimo y un máximo legibles */
+			font-size: 9vw;
+			line-height: 0.7;
+		}
+
+		.manifiesto-text {
+			grid-area: text;
+		}
+
+		.manifiesto-photo {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			grid-area: photo;
+			width: 100%;
+			height: 100%;
+			/* 756 × 733 es el tamaño del export original; con object-fit: cover
+			   en la foto real, esta caja puede ser cualquier proporción y
+			   seguirá viéndose bien en pantallas más grandes */
+			border: 1px dashed var(--txt);
+			color: var(--txt);
+			font-family: var(--font-body);
+			text-transform: uppercase;
+			font-size: 0.8rem;
+			text-align: center;
+			padding: 1rem;
+		}
+
+		.manifiesto-text {
+			padding-bottom: 0;
+		}
+
+		.manifiesto-logo {
+			position: relative;
+			left: auto;
+			right: auto;
+			bottom: auto;
+			z-index: 1;
+			width: 100%;
+			margin-top: -10%;
+			pointer-events: auto;
+		}
+	}
+</style>
